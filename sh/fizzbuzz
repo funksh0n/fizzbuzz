@@ -1,0 +1,18 @@
+#!/bin/sh
+for i in {1..100}
+do
+  output='';
+  if [ `expr $i % 3` -eq 0 ] || [ `expr $i % 5` -eq 0 ]; then
+    if [ `expr $i % 3` -eq 0 ]; then
+      output="Fizz"
+    fi
+    if [ `expr $i % 5` -eq 0 ]; then
+      output="${output}Buzz";
+    fi
+  else
+    output="$i"
+  fi
+
+  echo $output
+done
+
